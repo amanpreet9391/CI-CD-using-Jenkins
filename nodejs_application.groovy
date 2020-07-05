@@ -11,7 +11,7 @@ triggers{
 }
 wrappers{
     nodejs('Nodejs')
-    docker('docker')
+    
 }
 steps{
     shell('npm install')
