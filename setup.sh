@@ -7,3 +7,4 @@ sudo groupadd docker
 sudo usermod -aG docker ec2-user
 sudo mkdir -p /var/jenkins_home
 sudo chown -R 1000:1000 /var/jenkins_home/
+sudo yum install git
