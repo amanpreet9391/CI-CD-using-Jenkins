@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app
+spec:
+  selector:
+    matchLabels:
+      app: nodejs
+  template:
+    metadata:
+      labels:
+        app: nodejs
+    spec:
+      containers:
+      -  image: amanpreet9391/simple-nodejs-app:f252e0a
+         imagePullPolicy: Always
+         name: nodejs-app
+         ports:
+         -  name: nodejs-port
+            containerPort: 3000
+              
