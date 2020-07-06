@@ -14,7 +14,9 @@ wrappers{
     
 }
 steps{
-    
+    dir("App"){
+        sh "pwd"
+    }
     shell('npm install')
     
     dockerBuildAndPublish{
