@@ -41,7 +41,7 @@ Now the Jenkins server is running. Next task is to install plugins which will be
 
 ### (3) Pipeline
 For this case I have implemented using two methods. </br>
-(a) Jenkins Job DSL - <b> smallcase-pipeline </b> </br>
+#### (a) Jenkins Job DSL - <b> smallcase-pipeline </b> </br>
 Jenkins Job DSl is nothing but automating the process of Job creation.</br>
 I have created a jenkins job DSl, `App/nodejs_application.groovy.`</br>
 Steps - </br>
@@ -55,7 +55,7 @@ In this job DSL on successful execution of npm install command, docker image wil
 In order to run this application on a system run command `docker pull amanpreet9391/simple-nodejs-app` followed by `docker run -p 3000:3000 --name myapp -d amanpreet9391/simple-nodejs-app`. Here amanpreet9391 is my dockerhub username and the repository in which image is pushed is simple-nodejs-app.</br>
 URL of the application hosted on an EC2 Instance - http://34.213.6.106:3000/
 
-(b) Jenkins Pipeline using Jenkinsfile - <b> project-pipeline</b></br>
+#### (b) Jenkins Pipeline using Jenkinsfile - <b> project-pipeline</b></br>
 This approach is better than Job DSl. It handles different stages like build/test/deployment of a single project. Jenkinsfile used is -  `Pipeline/Jenkinsfile`.
 Steps -
 * Create a pipeline. New item -> Pipeline
@@ -64,6 +64,8 @@ Steps -
 * provide the script path - `Pipeline/Jenkinsfile`.
 
 Jenkinsfile involve different stages - </br>
+<img width="1552" alt="Screenshot 2020-07-06 at 6 47 04 PM" src="https://user-images.githubusercontent.com/25201552/86597289-23480980-bfb9-11ea-81bc-ca7f899715cd.png">
+
 (i)   setup stage </br>
       Git clone the specified repo in Jenkins. Fetch commit id and put that commit id in `.git/commit_id` file.</br>
       Store that commit id in a variable `commit_id` </br>
