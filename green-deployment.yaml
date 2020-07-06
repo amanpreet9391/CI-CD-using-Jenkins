@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-deployment
+spec:
+  selector:
+    matchLabels:
+      app: nodejs
+      version: "1.1"
+  template:
+    metadata:
+      labels:
+        app: nodejs
+        version: "1.1"
+    spec:
+      containers:
+      -  image: amanpreet9391/simple-nodejs-app:latest
+         imagePullPolicy: Always
+         name: nodejs-app
+         ports:
+         -  name: nodejs-port
+            containerPort: 3000
+              
