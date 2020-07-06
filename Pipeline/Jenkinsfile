@@ -19,9 +19,11 @@ stage('test'){
 }
 
 stage('docker build/push'){
+    dir("App") {
     docker.withRegistry('https://index.docker.io/', 'dockerhub') {
        def app = docker.build("amanpreet9391/simple-nodejs-app:${commit_id}", '.').push()
      }
+    }
    
 }
 

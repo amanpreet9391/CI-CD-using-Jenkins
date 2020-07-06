@@ -3,6 +3,7 @@ var app = express();
 
 app.get('/', function (req, res) {
   res.send('Hello Guys! I hope you like my work :)');
+  res.send('This is a Green Deployment');
 });
 
 var server = app.listen(3000, function () {
