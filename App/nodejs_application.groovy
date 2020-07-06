@@ -16,9 +16,12 @@ wrappers{
 steps{
     dir("App") {
     sh "pwd"
-
+    
     shell('npm install')
+    }
     dockerBuildAndPublish{
+        dir("App"){
+          sh "pwd"  
         repositoryName('amanpreet9391/simple-nodejs-app')
        tag('${GIT_REVISION,length=9}')
        registryCredentials('dockerhub')
@@ -27,11 +30,11 @@ steps{
              createFingerprints(false)
              skipDecorate()
 
-
+        }
     }
 }
 
-}
+
 
 
 
