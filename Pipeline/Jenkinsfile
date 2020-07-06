@@ -12,10 +12,19 @@ stage('test'){
     dir("App") {
     sh "pwd"
 
-    sh 'npm install --donly-dev'
+    sh 'npm install --only=dev'
     sh 'npm test'
     }
 }
+}
+stage("staging"){
+    nodejs(nodeJSInstallationName: 'Nodejs'){
+    dir("App") {
+    sh "pwd"
+
+    sh 'npm install'
+    
+    }
 }
 
 stage('docker build/push'){
