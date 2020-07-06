@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: nodejs
-    version: "1.0"  # Pointing towards blue-deployment
+    version: "1.1"  # Pointing towards green-deployment
   type: LoadBalancer
   ports:
   -  targetPort: 3000
