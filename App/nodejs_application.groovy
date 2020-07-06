@@ -14,6 +14,9 @@ wrappers{
     
 }
 steps{
+    dir("App") {
+    sh "pwd"
+
     shell('npm install')
     dockerBuildAndPublish{
         repositoryName('amanpreet9391/simple-nodejs-app')
@@ -28,7 +31,7 @@ steps{
     }
 }
 
-
+}
 
 
 
