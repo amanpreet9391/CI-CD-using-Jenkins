@@ -6,15 +6,16 @@ stage('setup'){
     commit_id = readFile('.git/commit_id').trim()  //trim to rmeove spaces and return a string character
 }
 
-dir("App") {
-    sh "pwd"
-}
+
 stage('test'){
     nodejs(nodeJSInstallationName: 'Nodejs'){
-    
+    dir("App") {
+    sh "pwd"
+
     sh 'npm install --donly-dev'
     sh 'npm test'
     }
+}
 }
 
 stage('docker build/push'){
