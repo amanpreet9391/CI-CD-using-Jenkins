@@ -5,9 +5,13 @@ metadata:
 spec:
   selector:
     app: nodejs
-    version: "1.0"  # service is pointing towards blue deployment
-  type: NodePort
+    version: "1.0"  # Pointing towards blue-deployment
+  type: LoadBalancer
   ports:
   -  targetPort: 3000
      port: 3000
-     nodePort: 30008
+     
+
+
+
+

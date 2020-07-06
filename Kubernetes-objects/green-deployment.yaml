@@ -14,10 +14,13 @@ spec:
         version: "1.1"
     spec:
       containers:
-      -  image: amanpreet9391/simple-nodejs-app:latest
+      -  image: amanpreet9391/simple-nodejs-app:dbebf81
          imagePullPolicy: Always
-         name: nodejs-app
+         name: nodejs-app-green
          ports:
          -  name: nodejs-port
             containerPort: 3000
               
+
+
+

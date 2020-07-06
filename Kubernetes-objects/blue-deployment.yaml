@@ -16,7 +16,7 @@ spec:
       containers:
       -  image: amanpreet9391/simple-nodejs-app:f252e0a
          imagePullPolicy: Always
-         name: nodejs-app
+         name: nodejs-app-blue
          ports:
          -  name: nodejs-port
             containerPort: 3000
