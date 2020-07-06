@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helm-green-deployment
+  namespace: {{.Values.namespace}}
+spec:
+  selector:
+    matchLabels:
+      app: nodejs
+      version: {{.Values.green.env | quote}}
+  template:
+    metadata:
+      labels:
+        app: nodejs
+        version: {{.Values.green.env | quote}}
+    spec:
+      containers:
+      -  image: {{.Values.green.image}}
+         imagePullPolicy: Always
+         name: {{.Values.green.containerName}}
+         ports:
+         -  name: nodejs-port
+            containerPort: 3000
+              
+
+
+

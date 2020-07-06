@@ -1,0 +1,12 @@
+namespace: helm-deployment
+blue:
+  env: "1.0"
+  image: amanpreet9391/simple-nodejs-app:f252e0a
+  containerName: helm-nodejs-app-blue
+service:
+  env: "1.0"
+green:
+  env: "1.1"
+  image: amanpreet9391/simple-nodejs-app:dbebf81
+  containerName: helm-nodejs-app-green
+    

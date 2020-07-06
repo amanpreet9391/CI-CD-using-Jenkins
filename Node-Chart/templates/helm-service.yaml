@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: helm-nodejs-service
+  namespace: {{.Values.namespace}}
+spec:
+  selector:
+    app: nodejs
+    version: {{.Values.service.env | quote}}  # Pointing towards green-deployment
+  type: LoadBalancer
+  ports:
+  -  targetPort: 3000
+     port: 3000
+     
+
+
+
+
