@@ -1,6 +1,6 @@
 job("Nodejs Application"){
 scm{
-    git('git://github.com/amanpreet9391/Smallcase-Assignment.git'){ node ->
+    git('git://github.com/amanpreet9391/Smallcase-Assignment.git/App'){ node ->
     node / gitConfigName('amanpreet9391')
     node / gitConfigEmail('amanpreet9391@gmail.com')
     }
@@ -14,14 +14,11 @@ wrappers{
     
 }
 steps{
-    dir("App") {
-    sh "pwd"
     
     shell('npm install')
-    }
+    
     dockerBuildAndPublish{
-        dir("App"){
-          sh "pwd"  
+        
         repositoryName('amanpreet9391/simple-nodejs-app')
        tag('${GIT_REVISION,length=9}')
        registryCredentials('dockerhub')
@@ -30,7 +27,7 @@ steps{
              createFingerprints(false)
              skipDecorate()
 
-        }
+        
     }
 }
 
