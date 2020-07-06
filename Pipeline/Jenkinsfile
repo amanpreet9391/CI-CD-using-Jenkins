@@ -26,6 +26,7 @@ stage("staging"){
     
     }
 }
+}
 
 stage('docker build/push'){
     dir("App") {
