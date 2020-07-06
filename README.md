@@ -15,6 +15,11 @@ Bonus points</br>
 I tried to cover each and every one of them. Here are the steps I followed, along with the approach I have used. </br>
 <img width="859" alt="Screenshot 2020-07-06 at 2 00 29 PM" src="https://user-images.githubusercontent.com/25201552/86573219-afded180-bf91-11ea-9dea-b603dfea0fae.png">
 
+App -> Application source code </br>
+App/nodejs_application.groovy -> Jenkins Job DSL script </br>
+Kubernetes-objects -> All the menifest files </br>
+Node-Chart -> Node helm chart for blue-green deployment </br>
+setup.sh -> to install all the pre-requisites in the EC2 instance. </br>
 
 ### (1) Jenkins Server</br>
 To create CI/CD pipeline I used Jenkins. Before creating pipeline first we need to configure the Jenkins server. I have used AWS EC2instance for the same. One can install and run Jenkins on an EC2 instance directly, but first of all we need to install all the softwares on which jenkins is dependent. Process becomes a bit complex and manual. So the better alternative approach is to run a <b>Jenkins container</b>.
